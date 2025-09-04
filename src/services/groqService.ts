@@ -1,10 +1,9 @@
 import axios from 'axios';
-import dotenv from 'dotenv';
 
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
-dotenv.config();
 
-const GROQ_API_KEY = process.env.GROQ_API_KEY;
+// Use Vite environment variable (must be prefixed with VITE_)
+const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 
 interface GroqResponse {
   text: string;
